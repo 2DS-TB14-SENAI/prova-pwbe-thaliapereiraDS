@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Minha Clínica{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">  <!-- Font Awesome para ícones -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #f8f9fa;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Bem-vindo à Minha Clínica</h1>
+    </header>
+
+    <!-- Barra de navegação -->
+    <nav>
+        <a href="{% url 'listar_medicos' %}">Médicos</a>
+        <a href="{% url 'criar_consulta' %}">Agendar Consulta</a>
+        <a href="{% url 'home' %}">Início</a>
+    </nav>
+
+    <!-- Conteúdo específico da página -->
+    <div class="content">
+        {% block content %} 
+        <!-- O conteúdo da página será inserido aqui -->
+        {% endblock %}
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2025 Minha Clínica. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
